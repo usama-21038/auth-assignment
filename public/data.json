@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "bill_type": "electricity",
+    "icon": "https://cdn-icons-png.flaticon.com/512/1046/1046875.png",
+    "organization": "DESCO",
+    "amount": 1250,
+    "due-date": "2025-03-25T08:30:00.000Z"
+  },
+  {
+    "id": 2,
+    "bill_type": "gas",
+    "icon": "https://cdn-icons-png.flaticon.com/512/2933/2933922.png",
+    "organization": "Tista",
+    "amount": 1488,
+    "due-date": "2025-03-28T06:57:58.110Z"
+  },
+  {
+    "id": 3,
+    "bill_type": "internet",
+    "icon": "https://cdn-icons-png.flaticon.com/512/484/484167.png",
+    "organization": "Link3",
+    "amount": 1000,
+    "due-date": "2025-03-20T05:20:12.300Z"
+  },
+  {
+    "id": 4,
+    "bill_type": "water",
+    "icon": "https://cdn-icons-png.flaticon.com/512/728/728093.png",
+    "organization": "WASA",
+    "amount": 620,
+    "due-date": "2025-03-30T10:15:22.500Z"
+  },
+  {
+    "id": 5,
+    "bill_type": "credit card",
+    "icon": "https://cdn-icons-png.flaticon.com/512/633/633611.png",
+    "organization": "BRAC Bank",
+    "amount": 4500,
+    "due-date": "2025-03-22T09:10:15.000Z"
+  },
+  {
+    "id": 6,
+    "bill_type": "tuition",
+    "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
+    "organization": "Dhaka College",
+    "amount": 3000,
+    "due-date": "2025-03-27T07:45:10.200Z"
+  },
+  {
+    "id": 7,
+    "bill_type": "electricity",
+    "icon": "https://cdn-icons-png.flaticon.com/512/1046/1046875.png",
+    "organization": "NESCO",
+    "amount": 980,
+    "due-date": "2025-03-19T06:10:45.120Z"
+  },
+  {
+    "id": 8,
+    "bill_type": "internet",
+    "icon": "https://cdn-icons-png.flaticon.com/512/484/484167.png",
+    "organization": "Amber IT",
+    "amount": 1200,
+    "due-date": "2025-03-26T11:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "bill_type": "water",
+    "icon": "https://cdn-icons-png.flaticon.com/512/728/728093.png",
+    "organization": "Chattogram WASA",
+    "amount": 540,
+    "due-date": "2025-03-29T04:55:30.000Z"
+  },
+  {
+    "id": 10,
+    "bill_type": "gas",
+    "icon": "https://cdn-icons-png.flaticon.com/512/2933/2933922.png",
+    "organization": "Jalalabad Gas",
+    "amount": 890,
+    "due-date": "2025-03-24T12:30:45.000Z"
+  },
+  {
+    "id": 11,
+    "bill_type": "credit card",
+    "icon": "https://cdn-icons-png.flaticon.com/512/633/633611.png",
+    "organization": "City Bank",
+    "amount": 5200,
+    "due-date": "2025-03-21T09:00:00.000Z"
+  },
+  {
+    "id": 12,
+    "bill_type": "electricity",
+    "icon": "https://cdn-icons-png.flaticon.com/512/1046/1046875.png",
+    "organization": "PDB",
+    "amount": 1330,
+    "due-date": "2025-03-23T03:40:00.000Z"
+  },
+  {
+    "id": 13,
+    "bill_type": "tuition",
+    "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
+    "organization": "North South University",
+    "amount": 15000,
+    "due-date": "2025-03-31T08:00:00.000Z"
+  },
+  {
+    "id": 14,
+    "bill_type": "internet",
+    "icon": "https://cdn-icons-png.flaticon.com/512/484/484167.png",
+    "organization": "BDCOM",
+    "amount": 900,
+    "due-date": "2025-03-18T07:10:10.000Z"
+  },
+  {
+    "id": 15,
+    "bill_type": "water",
+    "icon": "https://cdn-icons-png.flaticon.com/512/728/728093.png",
+    "organization": "Rajshahi WASA",
+    "amount": 480,
+    "due-date": "2025-03-28T02:25:35.000Z"
+  }
+]
