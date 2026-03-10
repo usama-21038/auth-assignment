@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Header = () => {
 
@@ -9,6 +10,22 @@ const Header = () => {
     <NavLink className="hover:underline" to="/bills">Bills</NavLink>
     <NavLink className="hover:underline" to="/profile">Profile</NavLink>
     </>
+
+
+  // auth data use
+  const {user,logOut}=use(AuthContext);
+
+  const handleLogOut =()=>{
+    console.log("User try to logout")
+    logOut().then(() => {
+      alert("You Logged out successfully")
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+  console.log(error);
+});
+  }
+
 
     return (
          <div className='bg-gray-100 text-black border-b border-gray-300'>
@@ -35,12 +52,25 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end gap-5">
-    <NavLink to="/auth/login" className='btn btn-outline  btn-primary'>
-      Login
-    </NavLink>
-    <NavLink to="/auth/register" className='btn btn-outline  btn-secondary'>
-      Register
-    </NavLink>
+   
+    
+    {
+      user ? 
+      (
+        <button onClick={handleLogOut} className='btn btn-primary'>LogOut</button>
+      )
+      : (
+        <>
+          <NavLink to="/auth/login" className='btn btn-outline  btn-primary'>
+            Login
+          </NavLink>
+          <NavLink to="/auth/register" className='btn btn-outline  btn-secondary'>
+            Register
+          </NavLink>
+        </>
+      )
+    }
+    <div>{user && user.email}</div>
   </div>
 </div>
         </div>
