@@ -4,6 +4,9 @@ import Home from "../components/Pages/Home";
 import Bills from "../components/Pages/Bills";
 import Profile from "../components/Pages/Profile";
 import BillDetails from '../BillDetails';
+import Login from "../components/Pages/Login";
+import Register from "./Register";
+import AuthLayout from "./AuthLayout";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +32,17 @@ const router = createBrowserRouter([
   },
     {
     path: "/auth",
-    element: <div>Authentication</div>,
+    element:<AuthLayout></AuthLayout>,
+    children:[
+      {
+        path:"/auth/login",
+        element:<Login></Login>
+      },
+      {
+        path:"/auth/register",
+        element:<Register></Register>
+      },
+    ]
   },
   {
     path:"/*",

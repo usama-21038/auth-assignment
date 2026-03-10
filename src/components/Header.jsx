@@ -35,8 +35,12 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end gap-5">
-    <button className='btn  btn-primary'>Login</button>
-    <button className='btn  btn-secondary'>Register</button>
+    <NavLink to="/auth/login" className='btn btn-outline  btn-primary'>
+      Login
+    </NavLink>
+    <NavLink to="/auth/register" className='btn btn-outline  btn-secondary'>
+      Register
+    </NavLink>
   </div>
 </div>
         </div>
