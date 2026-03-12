@@ -1,34 +1,48 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
+    const {createUser,setUser,updateUser} = use(AuthContext);
+    const [nameError, setNameError] = useState("");
 
-    const {createUser,setUser} = use(AuthContext);
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photoUrl = form.photoUrl.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log({ name, photoUrl, email, password });
 
-    const handleRegister=(e)=>{
-e.preventDefault();
-console.log(e.target);
-const form=e.target;
-const name=form.name.value;
-const photoUrl=form.photoUrl.value;
-const email=form.email.value;
-const password=form.password.value;
-console.log({ name, photoUrl, email, password });
+        if (name.length < 5) {
+            setNameError("Name must be at least 5 characters long");
+            return;
+        } else {
+            setNameError("");
+        }
 
-createUser(email, password)
-.then((result) => {
-    // Signed up 
-    const user = result.user;
-    // console.log(user);
-    setUser(user);
-})
-.catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage);
-    // ..
-});
+        createUser(email, password)
+            .then((result) => {
+                // Signed up
+                const user = result.user;
+                updateUser({ displayName: name , photoURL: photoUrl }).then(() => {
+                    setUser({...user, displayName: name , photoURL: photoUrl});
+                })
+                .catch((error) => {
+                    console.error("Error updating user profile:", error);
+                    setUser(user);
+                });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                if (errorCode === "auth/email-already-in-use") {
+                    alert("This email is already registered. Please log in or use a different email.");
+                } else {
+                    alert(errorMessage);
+                }
+            });
     }
 
     return (
@@ -40,6 +54,7 @@ createUser(email, password)
                         {/* Full Name */}
                         <label className="label">Full Name</label>
                         <input name='name' type="text" className="input" placeholder="Full Name" required/>
+                        {nameError && <p className='text-red-500'>{nameError}</p>}
                         {/* Photo Url */}
                         <label className="label">Photo URL</label>
                         <input name='photoUrl' type="text" className="input" placeholder="Photo URL" required/>

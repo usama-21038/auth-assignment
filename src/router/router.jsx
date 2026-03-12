@@ -7,6 +7,7 @@ import BillDetails from '../BillDetails';
 import Login from "../components/Pages/Login";
 import Register from "./Register";
 import AuthLayout from "./AuthLayout";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     Component:Root,
     children:[
         {index:true , element:<Home></Home>},
-        {path:"/bills" , element: <Bills></Bills>,
+        {path:"/bills" , element: <PrivateRoute><Bills /></PrivateRoute>,
             loader:async()=>{
                 const response=await fetch("/public/data.json");
                 return response.json();
