@@ -9,6 +9,7 @@ const Root = () => {
     return (
         <div>
             <Header amount={amount} />
+            {import.meta.env.VITE_name}
             <Outlet context={{ amount, setAmount }} />
             <Footer />
         </div>

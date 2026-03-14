@@ -19,13 +19,13 @@ const Header = ({ amount }) => {
   const {user,logOut}=use(AuthContext);
 
   const handleLogOut =()=>{
-    console.log("User try to logout")
+    // console.log("User try to logout")
     logOut().then(() => {
       alert("You Logged out successfully")
   // Sign-out successful.
 }).catch((error) => {
   // An error happened.
-  console.log(error);
+  // console.log(error);
 });
   }
 

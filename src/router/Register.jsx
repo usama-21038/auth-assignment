@@ -14,7 +14,7 @@ const Register = () => {
         const photoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log({ name, photoUrl, email, password });
+        // console.log({ name, photoUrl, email, password });
 
         if (name.length < 5) {
             setNameError("Name must be at least 5 characters long");
@@ -32,7 +32,7 @@ const Register = () => {
                     navigate('/');
                 })
                 .catch((error) => {
-                    console.error("Error updating user profile:", error);
+                    // console.error("Error updating user profile:", error);
                     setUser(user);
                     navigate('/');
                 });
