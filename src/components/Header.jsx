@@ -1,11 +1,11 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FaCircleUser } from "react-icons/fa6";
 import ProfileDropdown from './ProfileDropdown';
 
 
-const Header = () => {
+const Header = ({ amount }) => {
 
      const links=
     <>
@@ -74,7 +74,7 @@ const Header = () => {
       )
     }
     {user && (
-      <ProfileDropdown user={user} />
+      <ProfileDropdown user={user} amount={amount} />
     )}
   </div>
 </div>

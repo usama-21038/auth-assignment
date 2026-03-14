@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useOutletContext } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 
 const BillDetails = () => {
     const bill = useLoaderData();
     const [paidBills, setPaidBills] = useState([]);
+    const { setAmount } = useOutletContext();
     if (!bill) return <div>Bill not found</div>;
     const dueDate = new Date(bill["due-date"]).toLocaleDateString();
     const isPaid = paidBills.includes(bill.id);
     const handlePay = () => {
         if (!isPaid) {
             setPaidBills([...paidBills, bill.id]);
+            setAmount(prev => prev - Number(bill.amount));
             toast("Bill Successfully Paid!");
         }
     };

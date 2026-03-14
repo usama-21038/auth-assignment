@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-export default function ProfileDropdown({ user }) {
+export default function ProfileDropdown({ user, amount }) {
   const [open, setOpen] = useState(false);
-  const amount = 10000;
 
   return (
     <div className="relative">

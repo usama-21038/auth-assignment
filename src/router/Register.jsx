@@ -1,10 +1,11 @@
 import React, { use, useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Register = () => {
     const {createUser,setUser,updateUser} = use(AuthContext);
     const [nameError, setNameError] = useState("");
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -28,10 +29,12 @@ const Register = () => {
                 const user = result.user;
                 updateUser({ displayName: name , photoURL: photoUrl }).then(() => {
                     setUser({...user, displayName: name , photoURL: photoUrl});
+                    navigate('/');
                 })
                 .catch((error) => {
                     console.error("Error updating user profile:", error);
                     setUser(user);
+                    navigate('/');
                 });
             })
             .catch((error) => {
