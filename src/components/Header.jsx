@@ -1,6 +1,9 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FaCircleUser } from "react-icons/fa6";
+import ProfileDropdown from './ProfileDropdown';
+
 
 const Header = () => {
 
@@ -70,7 +73,9 @@ const Header = () => {
         </>
       )
     }
-    <div>{user && user.email}</div>
+    {user && (
+      <ProfileDropdown user={user} />
+    )}
   </div>
 </div>
         </div>
